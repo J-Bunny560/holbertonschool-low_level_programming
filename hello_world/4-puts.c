@@ -4,6 +4,6 @@
  *Return: Always 0 (Success)
  */
 int main(void)
-{puts("/"Programing is like creating a multilingual puzzle\n");
+{puts("/"Programing is like creating a multilingual puzzle \n");
 return (0);
 }

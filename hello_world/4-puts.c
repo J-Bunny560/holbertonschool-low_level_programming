@@ -2,11 +2,9 @@
 /**
  *main - Entry point
  *
- *Description: Calls puts and recieves value returned by puts after its
- *execution.
- *Return: Always return 0 to indicate success
+ *Return: Always 0 (Success)
  */
 int main(void)
-{ puts("\"Programing is like building a multilingual puzzle");
-return (0);
+{ puts ("\"Programing is like building a multilingual puzzle");
+  return (0);
 }

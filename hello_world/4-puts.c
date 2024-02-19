@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- *main - Entry point
- *Return: Always 0 (Success)
+ *main - 
+ *Return: Always 0.
  */
 int main(void)
-{puts("/"Programing is like creating a multilingual puzzle \n");
+{puts("\"Programing is like creating a multilingual puzzle \n");
 return (0);
 }

@@ -1,16 +1,18 @@
 #include "main.h"
 /**
- * main - Entry point
- * Return: Always 0 (Success)
+ * print_alphabet - make the alphabet
+ *
+ * Description: This function prints the alphabet, in lowercase
+ *
+ * Return: void
  */
 void print_alphabet(void)
 {
-char c = 'a';
+char c;
 
-while (c <= 'z')
+for (c = 'a'; c <= 'z'; c++)
 {
 _putchar(c);
-c++;
 }
 
 _putchar('\n');

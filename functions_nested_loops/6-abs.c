@@ -1,15 +1,14 @@
 #include "main.h"
 /**
- *print_sign-prints sign of a number
+ *_abs - computes the absolute value of an integer
  *@i: number targeted
- *Return: returns 0
+ *Return: return the absolute value of the integer
  */
 int _abs(int i)
 {
-if (i > 0)
+if (i >= 0)
 return (i);
-else if (i < 0)
-return (-i);
 else
+return (-i);
 return (0);
 }

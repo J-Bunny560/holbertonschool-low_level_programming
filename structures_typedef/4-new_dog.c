@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <string.h>
 /**
   * new_dog - creates a new struct of type dog
   * @name: struct parameter name
@@ -12,7 +13,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 dog_t *doggy;
 
 doggy = malloc(sizeof(dog_t));
-if (doggy = NULL)
+ if (doggy = NULL)
 return (NULL);
 
 doggy->name = strdup(name);

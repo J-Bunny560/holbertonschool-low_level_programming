@@ -3,23 +3,23 @@
 #include <stdio.h>
 #include <stddef.h>
 /**
- * _strlen - gets length of the string
- * @s: string
- * Return: length of the string
- */
+  * _strlen - gets length of the string
+  * @s: string
+  * Return: length of the string
+  */
 int _strlen(const char *s)
 {
 int i;
 
-for (i =0; s[i]; i++)
+for (i = 0; s[i]; i++)
 ;
- return (i);
+return (i);
 }
 /**
- * _strdup - recreation of string duplicate function
- * @src: source of string to duplicate
- * Return: pointer to malloc'd space with copied string
- */
+  * _strdup - recreation of string duplicate function
+  * @src: source of string to duplicate
+  * Return: pointer to malloc'd space with copied string
+  */
 void *_strdup(const char *src)
 {
 int len, i;
@@ -35,14 +35,14 @@ dest[i] = '\0';
 return (dest);
 }
 /**
- * add_node_end - add new nodes to the end of the list
- * @head: current place in the list
- * @str: string to add to the head
- * Return: pointer to current position in list
- */
+  * add_node_end - add new nodes to the end of the list
+  * @head: current place in the list
+  * @str: string to add to the head
+  * Return: pointer to current position in list
+  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *new, *curren;
+list_t *new, *current;
 char *dupstr;
 
 if (str == NULL)
@@ -62,10 +62,9 @@ if (*head == NULL)
 *head = new;
 return (*head);
 }
-curren = *head;
-while (curren->next != NULL)
-curren = curren->next;
-curren->next = new;
+current = *head;
+while (current->next != NULL)
+current = current->next;
+current->next = new;
 return (*head);
 }
-   

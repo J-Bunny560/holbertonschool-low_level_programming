@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * add_dnodeint_end - add new nodes to the end of the list
  * @head: current place in the list

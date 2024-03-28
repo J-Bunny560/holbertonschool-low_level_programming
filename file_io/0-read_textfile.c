@@ -1,51 +1,32 @@
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-
 #include "main.h"
-
 /**
- * read_textfile - Reads a text file and prints it
- * @filename: A pointer to the name of the file to read.
- * @letters: The number of letters to read and print.
- *
- * Return: The actual number of letters it could read and print.
- */
+  * read_textfile - reads a text file and prints it to the POSIX standard out
+  * @filename: name of the file to read
+  * @letters: number of characters to print
+  * Return: 0 on success
+  **/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-ssize_t fd, rd, tot_rd;
-char *buf;
+int txt_file, total, read_status;
+char buffer[BUFSIZE];
+
 if (filename == NULL)
 return (0);
-fd = open(filename, O_RDONLY);
-if (fd == -1)
+txt_file = open(filename, O_RDONLY);
+if (txt_file == -1)
 return (0);
-buf = malloc(sizeof(char) * letters);
-if (buf == NULL)
+total = 0;
+read_status = 1;
+while (letters > BUFSIZE && read_status != 0)
 {
-close(fd);
-return (0);
+read_status = read(txt_file, buffer, BUFSIZE);
+write(STDOUT_FILENO, buffer, read_status);
+total += read_status;
+letters -= BUFSIZE;
 }
-tot_rd = 0;
-while (tot_rd < (ssize_t)letters)
-{
-rd = read(fd, buf + tot_rd, letters - tot_rd);
-if (rd == -1)
-{
-free(buf);
-close(fd);
-return (0);
-}
-tot_rd += rd;
-}
-if (write(STDOUT_FILENO, buf, tot_rd) != tot_rd)
-{
-free(buf);
-close(fd);
-return (0);
-}
-free(buf);
-close(fd);
-return (tot_rd);
+read_status = read(txt_file, buffer, letters);
+write(STDOUT_FILENO, buffer, read_status);
+total += read_status;
+close(txt_file);
+return (total);
 }

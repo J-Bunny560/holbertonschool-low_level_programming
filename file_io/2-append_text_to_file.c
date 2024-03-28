@@ -18,7 +18,7 @@ return (-1);
 if (text_content == NULL)
 return (1);
 for (len = 0; text_content[len]; len++)
-		;
+;
 wr_stat = write(append_file, text_content, len);
 close(append_file);
 return (wr_stat == -1 ? -1 : 1);
